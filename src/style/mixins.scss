@@ -1,0 +1,30 @@
+@mixin button-reset {
+  padding: 0;
+  border: none;
+  font-family: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+}
+
+@mixin opacity-link {
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.8;
+  }
+}
+
+@mixin hide-font {
+  font-size: 0;
+  line-height: 0;
+}
+
+@mixin preventing-text-wrapping {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
