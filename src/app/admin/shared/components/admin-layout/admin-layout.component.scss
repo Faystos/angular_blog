@@ -1,0 +1,37 @@
+.header {
+  width: 100%;
+  background-color: slategray;
+  padding: 10px;
+
+  a {
+    text-decoration: none;
+    color: #ffffff;
+  }
+
+  .header__wrap {
+    width: 75%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+
+  .header__nav_block {
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    a {
+      margin: 0 7px;
+      text-decoration: none;
+    }
+
+    .active {
+      color: brown;
+    }
+  }
+
+
+}

@@ -1,0 +1,31 @@
+.form {
+  width: 45%;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  margin: 100px auto 0;
+  padding: 3.5rem;
+
+  h3 {
+    text-align: center;
+    margin-bottom: 25px;
+  }
+
+  .form__control {
+    width: 24%;
+    margin: 0 auto 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .form__validation_error {
+    margin-top: 5px;
+    color: brown;
+  }
+
+  button {
+    display: block;
+    margin: 0 auto;
+  }
+}

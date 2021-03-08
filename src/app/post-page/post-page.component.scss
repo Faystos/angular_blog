@@ -1,0 +1,34 @@
+@import '../../style/mixins.scss';
+
+.post_block {
+
+  width: 100%;
+
+  .post_block__wrap {
+    width: 75%;
+    margin: 0 auto;
+    border: 1px solid #000000;
+    padding: 25px;
+  }
+
+  .post_block__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+
+    button {
+      @include button-reset;
+    }
+  }
+
+  .post_block__text {
+    margin-bottom: 15px;
+  }
+
+  .post_block__post_info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

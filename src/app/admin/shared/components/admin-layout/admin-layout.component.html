@@ -1,2 +1,17 @@
-<p>admin-layout works!</p>
-<router-outlet></router-outlet>
+<header class="header">
+  <div class="header__wrap">
+    <h3><a routerLink="/" >Admin</a></h3>
+    <div class="header__nav_block">
+      <a [routerLink]="['/admin', 'dashboard']" routerLinkActive="active">Главная</a>
+      <a [routerLink]="['/admin', 'create']" routerLinkActive="active">Создать</a>
+      <a href="#" (click)='onLogout($event)'>Выход</a>
+    </div>
+  </div>
+</header>
+
+<section>
+  <router-outlet></router-outlet>
+</section>
+
+
+

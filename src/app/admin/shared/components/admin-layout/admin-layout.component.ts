@@ -12,4 +12,12 @@ export class AdminLayoutComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+
+  onLogout = (evt:Event) => {
+    evt.preventDefault();
+    console.log('exit');
+
+  }
+
 }
