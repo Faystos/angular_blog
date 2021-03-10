@@ -1,5 +1,8 @@
 <form class="form" [formGroup]="form" (ngSubmit)='onSubmit()'>
   <h3>Авторизация</h3>
+  <div class="form__block_error_message" *ngIf="auth.error$ | async as error">
+    <p>{{ error }}</p>
+  </div>
   <div class="form__control">
     <label for="email">E-Mail: </label>
     <input type="email" name="email" id="email" formControlName="email">
@@ -21,7 +24,7 @@
       </small>
     </div>
   </div>
-  <button type="submit">Войти</button>
+  <button type="submit" [disabled]="form.invalid">Войти</button>
 </form>
 
 
