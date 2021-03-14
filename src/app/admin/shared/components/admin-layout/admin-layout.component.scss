@@ -1,37 +1,7 @@
-.header {
-  width: 100%;
-  background-color: slategray;
-  padding: 10px;
+.nav-wrapper {
+  padding: 0 1rem;
 
-  a {
-    text-decoration: none;
-    color: #ffffff;
+  .active {
+    color: #4a148c;
   }
-
-  .header__wrap {
-    width: 75%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-
-  .header__nav_block {
-    width: 250px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    a {
-      margin: 0 7px;
-      text-decoration: none;
-    }
-
-    .active {
-      color: brown;
-    }
-  }
-
-
 }

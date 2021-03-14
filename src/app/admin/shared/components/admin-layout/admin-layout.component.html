@@ -1,14 +1,13 @@
-<header class="header">
-  <div class="header__wrap">
-    <h3><a routerLink="/" >Admin</a></h3>
-
-    <div class="header__nav_block" *ngIf="auth.isAuthEnticated()">
-      <a [routerLink]="['/admin', 'dashboard']" routerLinkActive="active">Главная</a>
-      <a [routerLink]="['/admin', 'create']" routerLinkActive="active">Создать</a>
-      <a href="#" (click)='onLogout($event)'>Выход</a>
-    </div>
+<nav>
+  <div class="nav-wrapper">
+    <a routerLink="/" class="brand-logo">Angular Blog</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down" *ngIf="auth.isAuthEnticated()">
+      <li><a [routerLink]="['/admin', 'dashboard']" routerLinkActive="active">Главная</a></li>
+      <li> <a [routerLink]="['/admin', 'create']" routerLinkActive="active">Создать</a></li>
+      <li><a href="#" (click)='onLogout($event)'>Выход</a></li>
+    </ul>
   </div>
-</header>
+</nav>
 
 <section>
   <router-outlet></router-outlet>

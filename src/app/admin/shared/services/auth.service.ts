@@ -41,7 +41,6 @@ export class AuthService {
 
   private handleError = (error: HttpErrorResponse) => {
     const { message } = error.error.error;
-    console.log(message);
 
     switch (message) {
       case 'INVALID_EMAIL':
@@ -55,9 +54,7 @@ export class AuthService {
         break;
     }
 
-
     return throwError(error);
-
   }
 
   private setToken = (response: any) => {
