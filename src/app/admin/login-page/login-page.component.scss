@@ -26,22 +26,8 @@
     }
   }
 
-  .form__control {
-    width: 24%;
-    margin: 0 auto 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-  }
-
   .form__validation_error {
     margin-top: 5px;
     color: brown;
-  }
-
-  button {
-    display: block;
-    margin: 0 auto;
   }
 }

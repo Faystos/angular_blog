@@ -1,30 +1,36 @@
 <form class="form" [formGroup]="form" (ngSubmit)='onSubmit()'>
-  <h3>Авторизация</h3>
+  <h3 class="display-5">Авторизация</h3>
   <div class="form__block_error_message" *ngIf="auth.error$ | async as error">
     <p>{{ error }}</p>
   </div>
-  <div class="form__control">
-    <label for="email">E-Mail: </label>
-    <input type="email" name="email" id="email" formControlName="email">
-    <div class="form__validation_error" *ngIf="form.controls['email'].touched && form.controls['email'].invalid">
-      <small *ngIf="form.controls['email'].errors?.required">Поле не заполнено</small>
-      <small *ngIf="form.controls['email'].errors?.email">Введен не корректный email адрес</small>
+  <div class="form-floating mb-3">
+    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" formControlName="email">
+    <label for="floatingInput">Email address</label>
+    <div class="mt-3" *ngIf="form.controls['email'].touched && form.controls['email'].invalid">
+      <div class="alert alert-danger" role="alert" *ngIf="form.controls['email'].errors?.required">
+        Поле не заполнено!
+      </div>
+      <div class="alert alert-danger" role="alert" *ngIf="form.controls['email'].errors?.email">
+        Введен не корректный email адрес!
+      </div>
     </div>
   </div>
-  <div class="form__control">
-    <label for="password">Пароль: </label>
-    <input type="password" name="password" id="password" formControlName="password">
-    <div class="form__validation_error" *ngIf="form.controls['password'].touched && form.controls['password'].invalid">
-      <small *ngIf="form.controls['password'].errors?.required">Введите пароль</small>
-      <small *ngIf="form.controls['password'].errors?.minlength">
+  <div class="form-floating mb-5">
+    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" formControlName="password">
+    <label for="floatingPassword">Password</label>
+    <div class="mt-3" *ngIf="form.controls['password'].touched && form.controls['password'].invalid">
+      <div class="alert alert-danger" role="alert" *ngIf="form.controls['password'].errors?.required">
+        Введите пароль!
+      </div>
+      <div class="alert alert-danger" role="alert" *ngIf="form.controls['password'].errors?.minlength">
         Минимальное количество символов:
         {{form.controls['password'].errors?.minlength.requiredLength}},
         текуще количество символов:
         {{form.controls['password'].errors?.minlength.actualLength}}
-      </small>
+      </div>
     </div>
   </div>
-  <button type="submit" [disabled]="form.invalid">Войти</button>
+  <input class="btn btn-primary mx-auto d-block" type="submit" [disabled]="form.invalid" value="Войти">
 </form>
 
 
