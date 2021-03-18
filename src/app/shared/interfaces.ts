@@ -10,3 +10,7 @@ export interface Post {
   content: string,
   date: Date,
 }
+
+export interface FbCreateResponse {
+  name: string
+}
