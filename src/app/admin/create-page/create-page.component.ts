@@ -2,7 +2,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 import { Post } from 'src/app/shared/interfaces';
-import { PostService } from '../shared/services/post.service';
+import { PostService } from '../../shared/post.service';
 
 @Component({
   selector: 'app-create-page',
@@ -34,7 +34,7 @@ export class CreatePageComponent implements OnInit {
       date: new Date()
     }
 
-   this.postService.create(post)
+    this.postService.create(post)
     .subscribe(() => {
       this.form.reset();
     });
