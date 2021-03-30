@@ -1,1 +1,41 @@
-<p>edit-page works!</p>
+<div class="container"
+ *ngIf="formEdit; else loader">
+  <form [formGroup]="formEdit">
+    <h3 class="display-5 text-center mb-5">Редактирование поста</h3>
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="titleInput" placeholder="Заголовок" formControlName="title">
+      <label for="titleInput">Заголовок поста:</label>
+      <div class="mt-3" *ngIf="formEdit.controls['title'].touched && formEdit.controls['title'].invalid">
+        <div class="alert alert-danger" role="alert" *ngIf="formEdit.controls['title'].errors?.required">
+          Поле не заполнено!
+        </div>
+      </div>
+    </div>
+    <div class="form-floating mb-3">
+      <p class="ms-3 mb-1">Содержание поста:</p>
+      <quill-editor formControlName="content"></quill-editor>
+      <div class="mt-3" *ngIf="formEdit.controls['content'].touched && formEdit.controls['content'].invalid">
+        <div class="alert alert-danger" role="alert" *ngIf="formEdit.controls['content'].errors?.required">
+          Поле не заполнено!
+        </div>
+      </div>
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary "
+        [disabled]="formEdit.invalid"
+        >Обновить
+      </button>
+    </div>
+    
+  </form>
+</div>
+
+<ng-template #loader>
+  <p class="text-centr">Загрузка...</p>
+
+</ng-template>
+
+  
+
+
+
