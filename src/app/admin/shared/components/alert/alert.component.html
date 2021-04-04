@@ -1,0 +1,10 @@
+<div class="alert alert-success" role="alert"
+  *ngIf="text"
+  [ngClass]="{
+    'alert-success': type === 'success',
+    'alert-danger': type === 'danger',
+    'alert-warning': type === 'warning'
+  }"
+  >
+  {{text}}
+</div>
