@@ -1,9 +1,20 @@
-<section class="posts_block">
-  <div class="posts_block__wrap">
-    <app-post></app-post>
-    <app-post></app-post>
-    <app-post></app-post>
-    <app-post></app-post>
-  </div>
-<section>
 
+  <div class="container mt-5"
+    *ngIf="posts$ | async as posts; else loading"
+  >
+    <app-post      
+      *ngFor="let post of posts"
+      [post]="post"
+    ></app-post>   
+  </div>
+
+
+  <ng-template #loading>
+    <div class="container d-flex justify-content-center mt-5">
+      <div class="spinner-border text-info mx-auto" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>    
+  </ng-template>
+
+  
