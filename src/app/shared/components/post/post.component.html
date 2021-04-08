@@ -1,13 +1,15 @@
-  <div class="card text-center mb-5">  
-    <div class="card-body">
-      <h5 class="card-title">{{post.title}}</h5>     
-      <!-- <p class="card-text  mb-2">{{post.content}}</p> -->
-      <a [routerLink]="['/post', post.id]" class="btn btn-primary">Подробнее</a>
-    </div>
-    <div class="card-footer text-muted">
+  <div class="card my-5">
+    <div class="card-header">
       {{post.date | date: 'dd.MM.YYYY' }}
     </div>
+    <div class="card-body ">
+      <h5 class="card-title">{{post.title}}</h5>
+      
+      <a [routerLink]="['/post', post.id]" class="btn btn-primary">Подробнее</a>
+    </div>
   </div>
+
+
 
 
 

@@ -1,4 +1,4 @@
-<section class="post_block">
+<!-- <section class="post_block">
   <div class="post_block__wrap">
 
     <div class="post_block__title">
@@ -15,4 +15,20 @@
       <small>06.03.2021</small>
     </div>
   </div>
-</section>
+</section> -->
+
+<div class="container"
+  *ngIf="post$ |async as post"
+>
+  <div class="card text-center my-5"> 
+    <div class="card-body">
+      <h5 class="card-title h5">{{ post.title }}</h5>
+      <quill-view-html [content]="post.title"></quill-view-html>
+      <a routerLink="/" class="btn btn-primary">На главную</a>
+        
+    </div>
+    <div class="card-footer text-muted">
+      {{ post.date | date: 'dd.MM.YYYY' }}
+    </div>
+  </div>
+</div>
