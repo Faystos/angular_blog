@@ -15,23 +15,14 @@ export class AlertService {
 
   success = (text: string, type: AlertType = 'success') => {
     this.handlerAlert(text, type);
-    // this.alert$.next({
-    //   type: 'success', text
-    // });
   }
 
   danger = (text: string, type: AlertType = 'danger') => {
     this.handlerAlert(text, type);
-    // this.alert$.next({
-    //   type: 'danger', text
-    // });
   }
 
   warning = (text: string, type: AlertType = 'warning') => {
     this.handlerAlert(text, type);
-    // this.alert$.next({
-    //   type: 'warning', text
-    // });
   }
 
   private handlerAlert = (text: string, type: AlertType) => {

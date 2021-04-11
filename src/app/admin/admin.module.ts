@@ -14,8 +14,6 @@ import { SerchPipe } from './shared/search.pipe';
 import { AlertComponent } from './shared/components/alert/alert.component';
 import { AlertService } from './shared/services/alert.service';
 
-
-
 @NgModule({
   declarations: [
     AdminLayoutComponent,
@@ -50,6 +48,4 @@ import { AlertService } from './shared/services/alert.service';
   ]
 })
 
-export class AdminModule {
-
-}
+export class AdminModule {}

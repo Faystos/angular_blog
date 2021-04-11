@@ -1,34 +1,23 @@
-<!-- <section class="post_block">
-  <div class="post_block__wrap">
-
-    <div class="post_block__title">
-      <h3>Заголовок</h3>
-      <button>На главную</button>
-    </div>
-
-    <div class="post_block__text">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores laborum odit voluptates nisi quasi tempore molestias officiis corrupti voluptate optio. Corporis error natus saepe possimus ex tenetur, nemo molestiae atque quod qui voluptate omnis expedita at! Id quae sed blanditiis sapiente libero neque reiciendis in, aspernatur ullam repudiandae eligendi quas asperiores cumque optio odit ea. Temporibus ipsa illum inventore voluptas.</p>
-    </div>
-
-    <div class="post_block__post_info">
-      <small>Имя автора</small>
-      <small>06.03.2021</small>
-    </div>
-  </div>
-</section> -->
-
 <div class="container"
-  *ngIf="post$ |async as post"
+  *ngIf="post$ |async as post; else loading"
 >
-  <div class="card text-center my-5"> 
+  <div class="card text-center my-5">
     <div class="card-body">
       <h5 class="card-title h5">{{ post.title }}</h5>
       <quill-view-html [content]="post.content"></quill-view-html>
       <a routerLink="/" class="btn btn-primary">На главную</a>
-        
+
     </div>
     <div class="card-footer text-muted">
       {{ post.date | date: 'dd.MM.YYYY' }}
     </div>
   </div>
 </div>
+
+<ng-template #loading>
+  <div class="container d-flex justify-content-center mt-5">
+    <div class="spinner-border text-info mx-auto" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+</ng-template>

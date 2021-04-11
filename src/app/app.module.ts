@@ -11,6 +11,7 @@ import { PostComponent } from './shared/components/post/post.component';
 import { SharedModule } from './shared/shared.modeule';
 import { AuthIntercepros } from './shared/auth.interceptor';
 
+
 const INTERCEPTOR_PROVIDER: Provider = {
   provide: HTTP_INTERCEPTORS,
   multi: true,
@@ -23,7 +24,7 @@ const INTERCEPTOR_PROVIDER: Provider = {
     MainLayoutComponent,
     HomePageComponent,
     PostPageComponent,
-    PostComponent
+    PostComponent,
   ],
   imports: [
     BrowserModule,
